@@ -15,9 +15,10 @@ function ViewNote(props) {
 	const [body, setBody] = useState("")
 	const [created, setCreated] = useState()
 	let params = useParams();
-
-	let date = new Date(created)
-
+	let date = new Date(created)   
+    const month = date.getMonth() + 1
+    const year = date.getYear().toString().replace(1,'')
+    
 	useEffect(() => {
 		axios.get(`${host}/api/notes/${params.noteId}`)
 		.then(({ data }) => {
@@ -27,10 +28,11 @@ function ViewNote(props) {
 		})
 	}, [])
 
+
   return (
       <div className="testbox">
 	      <form>
-	      <h2 style={{color: "red"}}>{title} <small>{date.getDate() + "/" + date.getMonth() + "/" + date.getYear()}</small></h2>
+	      <h2 style={{color: "red"}}>{title} <small>{date.getDate() + "/" + month  + "/" + year}</small></h2>
 
 	      <div className="item">{body}</div>
 	      </form>
@@ -40,3 +42,4 @@ function ViewNote(props) {
 }
 
 export default ViewNote;
+
