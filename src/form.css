@@ -1,81 +1,94 @@
-      h1 {
-      position: absolute;
+h1 {
       margin: 0;
-      font-size: 32px;
+      margin-top: 3rem;
       color: #fff;
       z-index: 2;
-      }
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      text-align: uppercase;
+      text-transform: uppercase;
+}
 
-      .testbox {
+.testbox {
       display: flex;
       justify-content: center;
       align-items: center;
       height: inherit;
       padding: 20px;
-      }
-      form {
+      flex-direction: column;
+}
+form {
       width: 50%;
       padding: 20px;
       border-radius: 6px;
       background: #fff;
-      box-shadow: 0 0 10px 0 #cc0052; 
-      }
-      
-      input, textarea {
+      box-shadow: 0 0 10px 0 rgba(0, 0, 0, 0.4);
+}
+
+input,
+textarea {
       margin-bottom: 10px;
       border: 1px solid #ccc;
       border-radius: 3px;
-      }
-      input {
+}
+input {
       width: calc(100% - 10px);
       padding: 5px;
-      }
-      textarea {
+      outline: none;
+}
+textarea {
       width: calc(100% - 12px);
       padding: 5px;
-      }
-      .item:hover p, input:hover::placeholder {
+      outline: none;
+      resize: none;
+}
+.item:hover p,
+input:hover::placeholder {
       color: #cc0052;
-      }
-      .item input:hover, .item textarea:hover {
+}
+.item input:hover,
+.item textarea:hover {
       border: 1px solid transparent;
       box-shadow: 0 0 6px 0 #cc0052;
       color: #cc0052;
-      }
-      .item {
+}
+.item {
       position: relative;
       margin: 10px 0;
-      }
-      .btn-block {
+}
+.btn-block {
       margin-top: 10px;
       text-align: center;
-      }
-      a[type=submit], button {
+}
+a[type="submit"],
+button {
       width: 150px;
       padding: 10px;
       border: none;
-      border-radius: 5px; 
+      border-radius: 5px;
       background: rgba(71, 147, 227, 1);
       font-size: 16px;
       color: #fff;
       cursor: pointer;
-      }
-      button:hover {
+}
+button:hover {
       background: #ff0066;
-      }
-      @media (min-width: 568px) {
-      .name-item, .contact-item {
-      display: flex;
-      flex-wrap: wrap;
-      justify-content: space-between;
+}
+@media (min-width: 568px) {
+      .name-item,
+      .contact-item {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-between;
       }
       .contact-item .item {
-      width: calc(50% - 8px);
+            width: calc(50% - 8px);
       }
       .name-item input {
-      width: calc(50% - 20px);
+            width: calc(50% - 20px);
       }
       .contact-item input {
-      width: calc(100% - 12px);
+            width: calc(100% - 12px);
       }
-      }
+}
